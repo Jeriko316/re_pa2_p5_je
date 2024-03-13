@@ -1,0 +1,39 @@
+package com.example.demo.repository2;
+
+import java.util.List;
+
+import com.example.demo.repository.modelo.Materia;
+
+public class MateriaRepositoryImpl implements IMateriaRepository {
+
+	@Override
+	public void insertar(Materia materia) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public List<Materia> encontrarTodos() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<Materia> encontrarPorId(Integer id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Materia encontrarPorCodigo(String codigo) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void actualizar(Materia materia) {
+		// TODO Auto-generated method stub
+		
+	}
+
+}

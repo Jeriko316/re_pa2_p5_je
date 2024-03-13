@@ -1,0 +1,47 @@
+package com.example.demo.repository.modelo.dto;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.example.demo.repository.modelo.Estudiante;
+import com.example.demo.repository.modelo.Materia;
+
+import jakarta.persistence.EntityManager;
+import jakarta.persistence.TypedQuery;
+
+@Service
+public class NoEsMatriculaicon implements NOeSIEstudianteService{
+
+	@Autowired
+	private EntityManager entityManager;
+	
+	@Override
+	public Estudiante guardar(Estudiante estudiante) {
+		// TODO Auto-generated method stub
+		String sql = "SELECT f FROM Estudiante f WHERE f.cedula =: cedula";
+		TypedQuery<Materia> myQuery = 
+		
+		return null;
+	}
+
+	@Override
+	public List<Materia> mostrarTodos(Estudiante estudiante) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<Estudiante> mostrarPorCedula(Estudiante estudiante) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void actualizar() {
+		// TODO Auto-generated method stub
+		
+	}
+
+}

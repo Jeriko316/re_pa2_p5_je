@@ -1,0 +1,73 @@
+package com.example.demo.repository.modelo;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
+
+import jakarta.persistence.EntityManager;
+import jakarta.persistence.TypedQuery;
+import jakarta.transaction.Transactional;
+
+@Repository
+@Transactional
+public class EstudianteRepositoryImpl implements IEsstudiantee{
+
+	@Autowired
+	public EntityManager entityManager;
+	
+	public Estudiante reservar(Integer cedula) {
+		String sql = "SELECT e FROM estudiante e WHERE e.cedula=: cedula";
+		TypedQuery<Estudiante> myQuery = this.entityManager.createQuery(sql,Estudiante.class);
+		myQuery.setParameter("cedula", cedula);
+		return myQuery.getSingleResult();
+	}
+	
+	public void secuenciaIncremento() {
+		private int i=0;
+		for(i=0; i<=10000; i++) {
+			List<Estudiante> secuenciaIncrementa;
+			i++;
+		}
+		
+	
+	}
+
+	@Override
+	public void insertar(Estudiante estudiante) {
+		// TODO Auto-generated method stub
+		this.entityManager.persist(estudiante);
+	}
+
+	@Override
+	public List<Estudiante> buscarPorCedula() {
+		// TODO Auto-generated method stub
+		return this.entityManager.merge(estudiante);
+	}
+
+	@Override
+	public List<Materia> buscarMateriaPorCodigo() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Estudiante actualizar() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Estudiante eliminar() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void guardar() {
+		// TODO Auto-generated method stub
+		
+	}
+	
+	
+}

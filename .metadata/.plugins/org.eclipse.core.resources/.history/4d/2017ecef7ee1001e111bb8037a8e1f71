@@ -1,0 +1,21 @@
+package com.example.demo.repository.modelo.dto;
+
+import java.util.List;
+
+import com.example.demo.repository.modelo.Estudiante;
+import com.example.demo.repository.modelo.Materia;
+
+public interface NOeSIEstudianteService {
+
+	public Estudiante guardar(Estudiante estudiante);
+	
+	public List<Materia> mostrarTodos(Estudiante estudiante);
+	
+	public List <Estudiante> mostrarPorCedula(Estudiante estudiante);
+	
+	public void actualizar();
+	
+	
+	
+	
+}

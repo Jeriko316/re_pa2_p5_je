@@ -1,0 +1,5 @@
+package com.example.demo.repository2;
+
+public interface INoInterfaz {
+
+}

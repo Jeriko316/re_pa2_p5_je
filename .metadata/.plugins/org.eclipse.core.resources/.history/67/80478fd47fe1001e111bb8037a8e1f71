@@ -1,0 +1,109 @@
+package com.example.demo.repository.modelo;
+
+import java.util.List;
+
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
+import jakarta.persistence.SequenceGenerator;
+import jakarta.persistence.Table;
+
+@Entity
+@Table(name="estudiante")
+
+
+public class estudiantr2 {
+
+	@Id
+	@Column(name="estudiante")
+	@SequenceGenerator(name = "seq_estudiante", sequenceName = "seq_estudiante", allocationSize = 1)
+	@GeneratedValue(generator = "seq_estudiante", strategy = GenerationType.SEQUENCE)
+	private String Nombre;
+	
+	@Column(name="estu_codigo")
+	private String codigo;
+	
+	@Column(name="estudiante_descripcion")
+	private String descripcion;
+	
+	@Column(name="estudiante_numero_Credito")
+	private Integer numCreditos;
+	
+	@Column(name="estu_numeroIncremental")
+	private Integer numIncremental;
+	
+	//Relacion con la base de datos 
+	@OneToMany(mappedBy = "estudiante", fetch = FetchType.LAZY)
+	private List <Estudiante> estudiante;
+	
+	//Relaciondos de la tabalas
+	@OneToMany(mappedBy = "estudiante", fetch = FetchType.EAGER)
+	private List <Materia> otraMateria; 
+	
+	
+	@Override
+	public String toString() {
+		return "estudiantr2 [Nombre=" + Nombre + ", codigo=" + codigo + ", descripcion=" + descripcion
+				+ ", numCreditos=" + numCreditos + ", numIncremental=" + numIncremental + ", estudiante=" + estudiante
+				+ ", materia=" + materia + ", matriculacion=" + matriculacion + ", getNombre()=" + getNombre()
+				+ ", getCodigo()=" + getCodigo() + ", getDescripcion()=" + getDescripcion() + ", getNumCreditos()="
+				+ getNumCreditos() + ", getEstudiante()=" + getEstudiante() + ", getClass()=" + getClass()
+				+ ", hashCode()=" + hashCode() + ", toString()=" + super.toString() + "]";
+	}
+
+	@OneToMany(mappedBy= "materia", fetch = FetchType.EAGER)
+	private List<Materia> materia;
+	
+	
+	@OneToMany(mappedBy="Matriculacion", fetch = FetchType.LAZY)
+	private List<Matricula> matriculacion;
+
+	public String getNombre() {
+		return Nombre;
+	}
+
+	public void setNombre(String nombre) {
+		Nombre = nombre;
+	}
+
+	public String getCodigo() {
+		return codigo;
+	}
+
+	public void setCodigo(String codigo) {
+		this.codigo = codigo;
+	}
+
+	public String getDescripcion() {
+		return descripcion;
+	}
+
+	public void setDescripcion(String descripcion) {
+		this.descripcion = descripcion;
+	}
+
+	public Integer getNumCreditos() {
+		return numCreditos;
+	}
+
+	public void setNumCreditos(Integer numCreditos) {
+		this.numCreditos = numCreditos;
+	}
+
+	public List<Estudiante> getEstudiante() {
+		return estudiante;
+	}
+
+	public void setEstudiante(List<Estudiante> estudiante) {
+		this.estudiante = estudiante;
+	}
+	
+	
+	
+	
+	
+}

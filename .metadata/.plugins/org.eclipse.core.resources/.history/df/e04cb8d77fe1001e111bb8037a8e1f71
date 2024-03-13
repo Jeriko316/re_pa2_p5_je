@@ -1,0 +1,19 @@
+package com.example.demo.repository.modelo;
+
+import java.util.List;
+
+public interface IEsstudiantee {
+
+	public void insertar(Estudiante estudiante);
+	
+	public List<Estudiante> buscarPorCedula(Integer cedula);
+	
+	public List<Materia> buscarMateriaPorCodigo(Integer codigo);
+	
+	public Estudiante actualizar(Estudiante estudiante);
+	
+	public Estudiante eliminar(Estudiante estudiante);
+	
+	public void guardar();
+	
+}
